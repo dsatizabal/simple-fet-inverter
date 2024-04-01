@@ -1,17 +1,17 @@
-** sch_path: /home/dsatizabal/simple-fet-inverter/xschem/inverter_tb.sch
-**.subckt inverter_tb Vout
+** sch_path: /home/dsatizabal/simple-fet-inverter/xschem/custinv_tb.sch
+**.subckt custinv_tb Vout
 *.opin Vout
-V1 VSS GND 1.8
-X1 VSS Vin Vout VDD inverter
-V2 VDD GND 0
-V3 Vin GND pulse(0 1.8 0n 1n 1n 50n 100n)
+X1 net2 net1 Vout Vin custinv
+V1 net1 GND 0
+V2 Vin GND pulse(0 1.8 0n 1n 1n 50n 100n)
+V3 net2 GND 1.8
 **** begin user architecture code
 
 
 
 .control
 tran 1n 500n
-write inverter_tb.raw
+write custinv_tb.raw
 .endc
 
 
@@ -27,10 +27,10 @@ write inverter_tb.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  inverter.sym # of pins=4
-** sym_path: /home/dsatizabal/simple-fet-inverter/xschem/inverter.sym
-** sch_path: /home/dsatizabal/simple-fet-inverter/xschem/inverter.sch
-.subckt inverter VSS IN OUT VDD
+* expanding   symbol:  custinv.sym # of pins=4
+** sym_path: /home/dsatizabal/simple-fet-inverter/xschem/custinv.sym
+** sch_path: /home/dsatizabal/simple-fet-inverter/xschem/custinv.sch
+.subckt custinv VSS VDD OUT IN
 *.ipin IN
 *.opin OUT
 *.iopin VSS
