@@ -6,31 +6,33 @@ V {}
 S {}
 E {}
 N 0 -20 0 20 {
-lab=#net1}
+lab=OUT}
 N -60 -50 -40 -50 {
-lab=#net2}
+lab=IN}
 N -60 -50 -60 50 {
-lab=#net2}
+lab=IN}
 N -60 50 -40 50 {
-lab=#net2}
+lab=IN}
 N 0 -110 -0 -80 {
-lab=VDD}
+lab=VSS}
 N 0 80 -0 110 {
-lab=VSS}
+lab=VDD}
 N -0 -50 80 -50 {
-lab=VDD}
+lab=VSS}
 N 80 -100 80 -50 {
-lab=VDD}
+lab=VSS}
 N -0 -100 80 -100 {
-lab=VDD}
+lab=VSS}
 N 0 50 80 50 {
-lab=VSS}
+lab=VDD}
 N 80 50 80 100 {
-lab=VSS}
+lab=VDD}
 N -0 100 80 100 {
-lab=VSS}
-N -80 -0 -60 -0 {}
-N -0 -0 30 -0 {}
+lab=VDD}
+N -80 -0 -60 -0 {
+lab=IN}
+N -0 0 30 -0 {
+lab=OUT}
 C {sky130_fd_pr/nfet_01v8.sym} -20 50 0 0 {name=M1
 L=0.15
 W=1
@@ -61,7 +63,7 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -80 0 0 0 {name=p1 lab=IN}
 C {devices/opin.sym} 30 0 0 0 {name=p2 lab=OUT}
-C {devices/iopin.sym} 0 -140 0 0 {name=p3 lab=VDD}
-C {devices/iopin.sym} 0 150 0 0 {name=p4 lab=VSS}
-C {devices/lab_pin.sym} 0 -110 0 0 {name=p5 sig_type=std_logic lab=VDD}
-C {devices/lab_pin.sym} 0 110 0 0 {name=p6 sig_type=std_logic lab=VSS}
+C {devices/iopin.sym} 0 -140 0 0 {name=p3 lab=VSS}
+C {devices/iopin.sym} 0 150 0 0 {name=p4 lab=VDD}
+C {devices/lab_pin.sym} 0 -110 0 0 {name=p5 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 0 110 0 0 {name=p6 sig_type=std_logic lab=VDD}
